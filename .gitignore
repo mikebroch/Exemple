@@ -1,0 +1,8 @@
+vendor/
+log/*
+db/*
+composer.json
+composer.lock
+phinx.yml
+cache/*
+.idea/

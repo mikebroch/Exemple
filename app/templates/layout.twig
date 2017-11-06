@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widgirth=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../sb-admin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    {#дубликаты?#}
+    {#<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">#}
+    {#<link rel="stylesheet" href="../sb-admin/bootstrap/css/bootstrap.min.css">#}
+
+    <!-- MetisMenu CSS -->
+    <link href="../sb-admin/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../sb-admin/dist/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../sb-admin/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../sb-admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!--  DataTables CSS-->
+    <link href="../sb-admin/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!--Morris Charts CSS-->
+    <link href="../sb-admin/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../sb-admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+        .nav.navbar-top-links.navbar-right {
+            margin-right: 0px !important;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">OnlineChat</a>
+            </div>
+            <!--/.navbar-header-->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <!-- вместо этого div'a подключить sidebar-menu-->
+            {% include "sidebar.twig" %}
+
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        {% block content %}  <!--page-wrapper-->
+        {% endblock %}
+
+    </div>
+</body>
+</html>
+
+<!-- jQuery -->
+<script src="../sb-admin/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../sb-admin/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../sb-admin/metisMenu/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="../sb-admin/datatables/js/jquery.dataTables.min.js"></script>
+<script src="../sb-admin/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="../sb-admin/datatables-responsive/dataTables.responsive.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../sb-admin/dist/js/sb-admin-2.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+{#
+<script>
+    var data = [
+        [1, '2017-02-01 16:01:01', 'Operator', 'Visitor'],
+        [2, '2017-03-01 17:01:01', 'Operator', 'Visitor'],
+        [3, '2017-04-01 18:01:01', 'Operator', 'Visitor'],
+    ];
+    $(document).ready(function() {
+        var table = $('#dataTables-example').DataTable( {
+            data: data,
+            columns: [
+                { title: "#" },
+                { title: "Дата" },
+                { title: "Оператор" },
+                { title: "Клиент" }
+            ]
+        } );
+
+        $('#dataTables-example tbody').on('click', 'tr', function () {
+            var data = table.row(this).data();
+            $('#history_dialogue .panel-body').html(data.join());
+            $('#history_dialogue').modal('show');
+        } );
+    } );
+</script>#}
+
+<script>
+    $("#dataTables-example").DataTable({
+        language: {
+            "processing": "Подождите...",
+            "search": "Поиск:",
+            "lengthMenu": "Показать _MENU_ записей",
+            "info": "Записи с _START_ до _END_ из _TOTAL_ записей",
+            "infoEmpty": "Записи с 0 до 0 из 0 записей",
+            "infoFiltered": "(отфильтровано из _MAX_ записей)",
+            "infoPostFix": "",
+            "loadingRecords": "Загрузка записей...",
+            "zeroRecords": "Записи отсутствуют.",
+            "emptyTable": "В таблице отсутствуют данные",
+            "paginate": {
+                "first": "Первая",
+                "previous": "Предыдущая",
+                "next": "Следующая",
+                "last": "Последняя"
+            },
+            "aria": {
+                "sortAscending": ": активировать для сортировки столбца по возрастанию",
+                "sortDescending": ": активировать для сортировки столбца по убыванию"
+            }
+        }
+    });
+</script>
